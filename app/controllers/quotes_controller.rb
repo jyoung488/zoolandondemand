@@ -1,9 +1,6 @@
 class QuotesController < ApplicationController
   def index
-    Giphy::Configuration.configure do |config|
-      config.api_key = 'dc6zaTOxFJmzC'
-    end
-
+    add_giphy
     @image = Giphy.random('zoolander')
   end
 
@@ -22,6 +19,7 @@ class QuotesController < ApplicationController
       flash[:notice] = "Text sent!"
     rescue Twilio::REST::RequestError => error
       puts error.message
+      flash[:notice] = "Something went wrong!"
     end
 
     redirect_to root_path
@@ -31,6 +29,12 @@ class QuotesController < ApplicationController
 
   def init_client
     @client = Twilio::REST::Client.new ENV['ACCOUNT_SID'], ENV['AUTH_TOKEN']
+  end
+
+  def add_giphy
+    Giphy::Configuration.configure do |config|
+      config.api_key = ENV['GIPHY_KEY']
+    end
   end
 
 end
