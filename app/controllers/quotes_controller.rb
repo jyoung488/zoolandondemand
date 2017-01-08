@@ -17,7 +17,7 @@ class QuotesController < ApplicationController
       @client.messages.create(
       body: message,
       to: '+19499230368',
-      from: '+19493572945'
+      from: "+" + ENV['TWILIO_NUM']
       )
     rescue Twilio::REST::RequestError => error
       puts error.message
