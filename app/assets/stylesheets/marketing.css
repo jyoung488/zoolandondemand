@@ -285,3 +285,9 @@ a.pure-button-primary {
 img {
   margin-top: 10px;
 }
+
+.notice {
+  padding: 20px;
+  background-color: #f44336;
+  color: white;
+}
