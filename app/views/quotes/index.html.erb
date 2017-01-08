@@ -1,3 +1,8 @@
 <%= image_tag("#{@image.image_original_url}", alt: "Random Zoolander GIF") %>
 
 <%= link_to 'get quote', :action => :send_text %>
+
+  <%= form_tag('/quotes/send_text', method: :get) do %>
+    <%= telephone_field_tag 'phone_number', nil, placeholder: '555-111-5555', pattern: '^\d{3}-\d{3}-\d{4}$' %>
+    <%= submit_tag 'Text me a quote' %>
+  <% end %>
