@@ -1,5 +1,10 @@
 class QuotesController < ApplicationController
   def index
+    Giphy::Configuration.configure do |config|
+      config.api_key = 'dc6zaTOxFJmzC'
+    end
+
+    @image = Giphy.random('zoolander')
   end
 
   def init_client
