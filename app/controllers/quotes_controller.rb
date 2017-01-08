@@ -29,9 +29,6 @@ class QuotesController < ApplicationController
   private
 
   def init_client
-    account_sid = 'AC020fb6e87eedfc9a5f8cd22f06f7386f'
-    auth_token = '94e61834103b06cb9d593d66223424ea'
-
     @client = Twilio::REST::Client.new account_sid, auth_token
   end
 
