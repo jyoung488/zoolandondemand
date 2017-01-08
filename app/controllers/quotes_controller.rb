@@ -19,6 +19,7 @@ class QuotesController < ApplicationController
       to: '+1' + params[:phone_number],
       from: "+" + ENV['TWILIO_NUM']
       )
+      flash[:notice] = "Text sent!"
     rescue Twilio::REST::RequestError => error
       puts error.message
     end
