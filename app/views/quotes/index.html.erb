@@ -1,0 +1,12 @@
+<div class="splash-container" style="background: url(<%= @image.image_original_url %>)">
+
+  <div class="splash splash-wrap">
+    <h1 class="splash-head">What is this, a texting center for ants?</h1>
+      <p class="is-center">
+        <%= form_tag('/quotes/send_text', method: :get, class: 'pure-form') do %>
+          <%= telephone_field_tag 'phone_number', nil, placeholder: '555-111-5555', pattern: '^\d{3}-\d{3}-\d{4}$', class: 'pure-input-rounded' %>
+          <%= submit_tag 'Text me a quote', class: 'pure-button'%>
+        <% end %>
+      </p>
+  </div>
+</div>
