@@ -7,12 +7,9 @@ class QuotesController < ApplicationController
   def send_text
     init_client
 
-    random_id = rand(ZoolanderQuote.first.id..ZoolanderQuote.last.id)
-    message = ZoolanderQuote.find(random_id).body
-
     begin
       @client.messages.create(
-      body: message,
+      body: ZoolanderQuote.random,
       to: '+1' + params[:phone_number],
       from: "+" + ENV['TWILIO_NUM']
       )
