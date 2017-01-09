@@ -5,15 +5,9 @@ class QuotesController < ApplicationController
   end
 
   def send_text
-    init_client
-
+    flash[:notice] = "Sending text!"
     begin
-      @client.messages.create(
-      body: ZoolanderQuote.random,
-      to: '+1' + params[:phone_number],
-      from: "+" + ENV['TWILIO_NUM']
-      )
-      flash[:notice] = "Text sent!"
+      Quote.create_text(params[:phone_number])
     rescue Twilio::REST::RequestError => error
       puts error.message
       flash[:notice] = "Something went wrong!"
@@ -23,10 +17,6 @@ class QuotesController < ApplicationController
   end
 
   private
-
-  def init_client
-    @client = Twilio::REST::Client.new ENV['ACCOUNT_SID'], ENV['AUTH_TOKEN']
-  end
 
   def add_giphy
     Giphy::Configuration.configure do |config|
