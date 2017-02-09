@@ -7,7 +7,7 @@ class Quote < ActiveRecord::Base
     self.init_client
 
     @client.messages.create(
-      body: ZoolanderQuote.random,
+      body: Zoolander::Rails.random,
       to: '+1' + number,
       from: "+" + ENV['TWILIO_NUM']
       )
