@@ -1,24 +1,32 @@
-# README
+# ZoolandOnDemand
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+![alt text](https://pbs.twimg.com/profile_images/616002132/dz.jpg)
 
-Things you may want to cover:
+----
+## Synopsis
 
-* Ruby version
+Webpage that prompts user to enter phone number to receive a text containing a Zoolander quote.
 
-* System dependencies
+----
+## APIs
+Used the following APIs:
 
-* Configuration
+* Twilio
+* Giphy
 
-* Database creation
+Giphy is used to search for random GIFs from Zoolander and used as the background to the page and Twilio is used to send outgoing SMS messages to the user.
 
-* Database initialization
 
-* How to run the test suite
+----
+## Motivation
 
-* Services (job queues, cache servers, search engines, etc.)
+Weekend project during Phase 3 of Dev Bootcamp.
 
-* Deployment instructions
+----
+## Installation
 
-* ...
+`bundle install` to ensure the appropriate gems are installed.
+
+----
+## Author
+* Jennifer Young | <mailto:jyoung488@gmail.com>
