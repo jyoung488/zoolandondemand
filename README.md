@@ -16,6 +16,8 @@ Used the following APIs:
 
 Giphy is used to search for random GIFs from Zoolander and used as the background to the page and Twilio is used to send outgoing SMS messages to the user.
 
+Note that the Twilio API is still in sandbox mode.
+
 ----
 ## Zoolander-Rails Gem
 
