@@ -1,6 +1,6 @@
 # ZoolandOnDemand
 
-![alt text](https://pbs.twimg.com/profile_images/616002132/dz.jpg)
+![Ridiculously Good Looking Image](https://pbs.twimg.com/profile_images/616002132/dz.jpg)
 
 ----
 ## Synopsis
